@@ -1,17 +1,23 @@
 <template>
-  <div id="app"></div>
+  <div id="app">
+    <Masthead />
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Masthead from "./components/Masthead.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    Masthead
   }
 };
 </script>
 
 <style>
+body {
+  margin: 0px;
+  background: #fdf7f3;
+}
 </style>
