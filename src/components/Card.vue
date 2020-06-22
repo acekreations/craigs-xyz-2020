@@ -1,15 +1,17 @@
 <template>
   <div class="card" :style="cardColor">
-    <div class="featureImage" :style="bgImg">
-      <div class="date">
-        <h3>{{ date.month }}/{{ date.day }} <br />{{ date.year }}</h3>
+    <a v-bind:href="post.id">
+      <div class="featureImage" :style="bgImg">
+        <div class="date">
+          <h3>{{ date.month }}/{{ date.day }} <br />{{ date.year }}</h3>
+        </div>
       </div>
-    </div>
 
-    <div class="cardBody">
-      <h2>{{ title }}</h2>
-      <p>{{ description }}..</p>
-    </div>
+      <div class="cardBody">
+        <h2>{{ title }}</h2>
+        <p>{{ description }}..</p>
+      </div>
+    </a>
   </div>
 </template>
 
@@ -17,6 +19,7 @@
 export default {
   name: "Card",
   props: {
+    id: String,
     title: String,
     description: String,
     featureImage: String,
@@ -36,6 +39,9 @@ export default {
         day: this.publishDate.split("-")[2],
         month: this.publishDate.split("-")[1],
         year: this.publishDate.split("-")[0]
+      },
+      post: {
+        id: "/posts/" + this.id
       }
     };
   }
@@ -54,6 +60,12 @@ p {
   margin: 0px 16px 32px 16px;
   color: #fff;
 }
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .featureImage {
   background-size: cover;
   background-position: center;
