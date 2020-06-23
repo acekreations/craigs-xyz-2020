@@ -1,6 +1,8 @@
 <template>
   <div class="masthead">
-    <img src="../assets/masthead.png" />
+    <router-link to="/">
+      <img src="../assets/masthead.png" />
+    </router-link>
   </div>
 </template>
 

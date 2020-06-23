@@ -1,6 +1,6 @@
 <template>
   <div class="card" :style="cardColor">
-    <a v-bind:href="post.id">
+    <router-link :to="post.id">
       <div class="featureImage" :style="bgImg">
         <div class="date">
           <h3>{{ date.month }}/{{ date.day }} <br />{{ date.year }}</h3>
@@ -11,7 +11,7 @@
         <h2>{{ title }}</h2>
         <p>{{ description }}..</p>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -59,6 +59,7 @@ p {
   border-radius: 10px;
   margin: 0px 16px 32px 16px;
   color: #fff;
+  animation: fadeIn ease 0.5s;
 }
 
 a {
